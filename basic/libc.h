@@ -1,16 +1,20 @@
 #pragma once
 
-#define max(a,b) 
-#define abs(a,b)
+#define INT_MAX ((int)(~0U >> 1))
+
+#define max(a, b) ((a) >= (b) ? (a) : (b))
+#define abs(a) ((a) >= 0 ? (a) : (-(a)))
 
 //stdlib
-int atoi(const char *str);
+int atoi(const char *s);
 
 //string
-int strlen(char const *s);
+int strlen(const char *s);
 
-char* strcpy(char *dst, char const *src);
-char* strncpy(char *dst, char const *src, int n);
+char* strcpy(char *dst, const char *src);
+char* strncpy(char *dst, const char *src, int n);
 
-int strcmp(char const *s1, char const *s2);
-int strncmp(char const *s1, char const *s2, int n);
+int strcmp(const char *s1, const char *s2);
+int strncmp(const char *s1, const char *s2, int n);
+
+void* memset(void* s, int ch, int n);
